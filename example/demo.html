@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../dist/bundle.js"></script>
+<!--    <script src="../src/index.ts"></script>-->
+</head>
+<body>
+    <div id="app">
+        <p>111{{msg+"---"}}222 </p>
+        <p v-text="textContent">   </p>
+        <label>
+            <input v-model="msg" type="text">
+        </label>
+        <button @click="myClick"> 点我得到新的值 </button>
+    </div>
+</body>
+</html>
+
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"我是msg变量的初始值",
+            textContent:"我是textContent的初始值",
+            newMsg:"",
+            info: {
+                id:"1",
+            },
+        },
+        methods:{
+            myClick:function (){
+                this.msg = "这是新的msg的值噢~"
+            }
+        }
+    })
+</script>
